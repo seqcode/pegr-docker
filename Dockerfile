@@ -19,4 +19,4 @@ RUN wget https://github.com/seqcode/pegr/releases/download/v0.3.0/pegr.war && \
 
 EXPOSE 8080
 
-CMD /etc/init.d/mariadb start ; java -Dgrails.env=prod -server -noverify -Xshare:off -Xms1G -Xmx1G -XX:+UseParallelGC -Djava.net.preferIPv4Stack=true -XX:+EliminateLocks -XX:+UseBiasedLocking -XX:MaxJavaStackTraceDepth=100 -jar pegr.war
+CMD /etc/init.d/mariadb start ; java -Dgrails.env=prod -Djava.security.egd=file:/dev/./urandom -server -noverify -Xshare:off -Xms1G -Xmx1G -XX:+UseParallelGC -Djava.net.preferIPv4Stack=true -XX:+EliminateLocks -XX:+UseBiasedLocking -XX:MaxJavaStackTraceDepth=100 -jar pegr.war
