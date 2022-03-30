@@ -7,7 +7,7 @@ COPY resources/pegr-config.properties /usr/local/pegr/
 COPY resources/protocols /usr/local/pegr/files/protocols
 WORKDIR /usr/local/pegr
 
-RUN wget https://github.com/seqcode/pegr/releases/download/v0.3.0/pegr.war && \
+RUN wget https://github.com/seqcode/pegr/releases/latest/download/pegr.war && \
     apt -y update && \
     apt -y install mariadb-server && \
     /etc/init.d/mariadb start && \ 
